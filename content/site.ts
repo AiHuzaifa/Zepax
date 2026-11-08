@@ -16,7 +16,8 @@ export const site = {
  * Example: https://hook.eu2.make.com/abc123xyz
  */
 export const MAKE_WEBHOOK_URL =
-  process.env.NEXT_PUBLIC_MAKE_WEBHOOK_URL || "";
+  process.env.NEXT_PUBLIC_MAKE_WEBHOOK_URL ||
+  "https://hook.eu1.make.com/6oaz2ek8w9gcuq7odauerxsbt7vjwypk";
 
 export const nav = [
   { label: "Services", href: "/services/" },

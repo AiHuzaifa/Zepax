@@ -1,3 +1,0 @@
-import Site from "../../site";
-export const metadata={title:"Appointment Follow Up Pipeline: Illustrative Workflow | ZEPAX",description:"An illustrative automation concept with transparent business impact assumptions. Not a completed client project.",alternates:{canonical:"/solution-examples/appointment-follow-up-pipeline"}};
-export default function Page(){return <Site page="/solution-examples/appointment-follow-up-pipeline"/>}

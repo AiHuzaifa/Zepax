@@ -1,3 +1,0 @@
-import Site from "../../site";
-export const metadata={alternates:{canonical:"/case-studies/zoho-books-saudi-e-invoicing"},"title": "Zoho Books Implementation & Saudi E-Invoicing Integration | ZEPAX Technology", "description": "A connected accounting foundation with VAT configuration, invoice automation and Fatoora/ZATCA e-invoicing integration."};
-export default function Page(){return <Site page="/case-studies/zoho-books-saudi-e-invoicing"/>}

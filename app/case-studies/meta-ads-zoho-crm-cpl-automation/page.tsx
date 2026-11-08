@@ -1,3 +1,0 @@
-import Site from "../../site";
-export const metadata={alternates:{canonical:"/case-studies/meta-ads-zoho-crm-cpl-automation"},"title": "Meta Ads Attribution & CPL Automation in Zoho CRM | ZEPAX Technology", "description": "Connect campaign attribution, qualified-lead conversion events and cost-per-lead reporting inside Zoho CRM."};
-export default function Page(){return <Site page="/case-studies/meta-ads-zoho-crm-cpl-automation"/>}

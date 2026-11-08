@@ -1,8 +1,0 @@
-ZEPAX Technology complete source export
-Source commit: 8ad9184791b9bccd7add529e62cbefca59d8ba40
-
-Includes all tracked source, public assets, configuration, dependency lockfile, and backend code. See README.md for project documentation.
-
-This is a React/Vinext application, not a WordPress theme or plain HTML upload. Requires Node.js >=22.13.0 and the package manager specified in package.json. Install dependencies before running the package scripts.
-
-The contact backend uses a Cloudflare D1 binding named DB. Hosting and database bindings must be configured for a separate deployment. Existing production database submissions, runtime secrets, node_modules, build output and Git credentials are not included.

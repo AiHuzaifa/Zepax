@@ -1,1 +1,23 @@
-export default function sitemap(){return ["/", "/about", "/services", "/blog", "/case-studies", "/contact", "/our-clients", "/solution-examples/meta-leads-response-follow-up", "/solution-examples/appointment-follow-up-pipeline", "/solution-examples/invoice-reconciliation-workflow", "/services/business-automations", "/services/crm-setup-integrations", "/services/ai-agent-development", "/services/custom-mcp-setups", "/blog/ai-receptionist-appointment-booking-guide", "/blog/meta-lead-ads-crm-follow-up-automation", "/blog/crm-setup-lead-tracking-checklist", "/case-studies/google-lsa-ghl-ai-chatbot", "/case-studies/meta-ads-zoho-crm-cpl-automation", "/case-studies/new-leaf-landscapes-ai-receptionist", "/case-studies/zoho-membership-billing-automation", "/case-studies/automotive-ghl-crm-sales-automation", "/case-studies/zoho-books-saudi-e-invoicing"].map(path=>({url:"https://zepaxtechnology.com"+(path==="/"?"":path)}))}
+import type { MetadataRoute } from "next";
+import { site } from "@/content/site";
+import { services } from "@/content/services";
+import { cases } from "@/content/cases";
+import { posts } from "@/content/blog";
+
+export const dynamic = "force-static";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const paths = [
+    "/",
+    "/services/",
+    "/case-studies/",
+    "/our-clients/",
+    "/about/",
+    "/blog/",
+    "/contact/",
+    ...services.map((s) => `/services/${s.slug}/`),
+    ...cases.map((c) => `/case-studies/${c.slug}/`),
+    ...posts.map((p) => `/blog/${p.slug}/`),
+  ];
+  return paths.map((p) => ({ url: site.url + p }));
+}

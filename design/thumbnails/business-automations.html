@@ -1,0 +1,32 @@
+<html><head><link rel=stylesheet href=base.css><style>
+.canvas{left:40px;top:44px;width:720px;height:412px}
+.area{position:absolute;inset:38px 0 0 0;background:#f5f8fc;background-image:radial-gradient(#d9e3ef 1px,transparent 1px);background-size:18px 18px}
+.node{position:absolute;width:198px;background:#fff;border:1px solid #dce6f1;border-radius:12px;padding:11px 12px;box-shadow:0 6px 16px rgba(15,36,64,.07)}
+.node .h{display:flex;align-items:center;gap:9px}
+.node .logo img{max-width:40px;height:13px}.node b{font-size:12.5px;display:block}
+.node small{font-size:10.5px;color:#6b7c92}
+.node .ok{position:absolute;right:-7px;top:-7px;width:18px;height:18px;border-radius:50%;background:#12a37a;color:#fff;font-size:11px;display:grid;place-items:center;border:2px solid #fff}
+.node.main{border-color:#0757c7;box-shadow:0 0 0 4px rgba(7,87,199,.12),0 6px 16px rgba(15,36,64,.07)}
+svg.lines{position:absolute;inset:0}
+.stats{position:absolute;left:14px;bottom:12px;display:flex;gap:8px}
+.stats span{background:#fff;border:1px solid #dce6f1;border-radius:8px;padding:6px 10px;font-size:10.5px;color:#4a5b72}
+.stats b{color:#0f2440}
+.icon{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700;flex:none}
+</style></head><body><div class=bg></div>
+<div class="win canvas"><div class=bar><i></i><i></i><i></i><span class=t>Lead intake &amp; follow-up workflow</span><span class=live>Active</span></div>
+<div class=area>
+<svg class=lines viewBox="0 0 720 374"><g fill=none stroke="#0757c7" stroke-width="2" stroke-dasharray="5 5" opacity=".6">
+<path d="M214 92 C 234 92, 234 92, 254 92"/>
+<path d="M452 92 C 480 92, 480 52, 506 52"/>
+<path d="M452 92 C 480 92, 480 172, 506 172"/>
+<path d="M353 140 C 350 200, 353 220, 353 246"/>
+<path d="M452 286 C 480 286, 480 292, 506 292"/></g>
+<g fill="#00c9e1"><circle cx=234 cy=92 r=4 /><circle cx=480 cy=72 r=4 /><circle cx=480 cy=150 r=4 /><circle cx=353 cy=200 r=4 /></g></svg>
+<div class=node style="left:16px;top:60px"><div class=h><div class=icon style="background:#7b5cff">⚡</div><div><b>Webhook</b><small>New lead from Meta Ads</small></div></div><span class=ok>✓</span></div>
+<div class="node main" style="left:254px;top:60px"><div class=h><div class=logo><img src="../../public/logos/make.svg"></div><div><b>Validate &amp; route</b><small>Email valid · Assign owner</small></div></div><span class=ok>✓</span></div>
+<div class=node style="left:506px;top:20px"><div class=h><div class=logo><img src="../../public/logos/crm.svg"></div><div><b>Zoho CRM</b><small>Create contact + deal</small></div></div><span class=ok>✓</span></div>
+<div class=node style="left:506px;top:140px"><div class=h><div class=logo><img src="../../public/logos/mail.svg"></div><div><b>Send welcome email</b><small>Personalised · instant</small></div></div><span class=ok>✓</span></div>
+<div class=node style="left:254px;top:246px"><div class=h><div class=logo><img src="../../public/logos/n8n.png"></div><div><b>Wait 1 day</b><small>Stop if lead replied</small></div></div></div>
+<div class=node style="left:506px;top:260px"><div class=h><div class=icon style="background:#12a37a">✉</div><div><b>SMS follow-up</b><small>Booking link sent</small></div></div></div>
+<div class=stats><span>Runs today <b>148</b></span><span>Errors <b style="color:#12a37a">0</b></span><span>Avg. response <b>38 sec</b></span></div>
+</div></div></body></html>

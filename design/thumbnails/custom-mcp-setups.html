@@ -1,0 +1,37 @@
+<html><head><link rel=stylesheet href=base.css><style>
+.client{left:40px;top:70px;width:270px;height:360px}
+.client .body{padding:14px;display:flex;flex-direction:column;gap:9px;background:#f8fafd;height:322px}
+.m{font-size:11.5px;line-height:1.45;padding:8px 11px;border-radius:12px}
+.u{align-self:flex-end;background:#0757c7;color:#fff;max-width:85%}
+.a{background:#fff;border:1px solid #e1e9f2}
+.call{font-size:10px;font-family:'JetBrains Mono',monospace;background:#0f2440;color:#7fe3f0;border-radius:8px;padding:8px 10px;line-height:1.5}
+.hub{position:absolute;left:350px;top:170px;width:120px;height:160px;border-radius:18px;background:linear-gradient(160deg,#0b56c4,#063a8a);border:1px solid rgba(255,255,255,.25);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;box-shadow:0 0 0 10px rgba(0,201,225,.08),0 20px 50px rgba(0,0,0,.4)}
+
+.hub b{font-size:13px}
+.hub small{font-size:9.5px;color:#bfe9f5;text-align:center;line-height:1.35}
+.tools{left:500px;top:56px;width:262px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.tools h5{font-size:11px;color:#6b7c92;letter-spacing:.06em;padding:2px 2px 4px}
+.tr{display:flex;align-items:center;gap:10px;border:1px solid #e1e9f2;border-radius:10px;padding:9px 10px}
+.tr b{font-size:12px;display:block}
+.tr small{font-size:10px;color:#6b7c92}
+.tg{margin-left:auto;width:30px;height:17px;border-radius:999px;background:#12a37a;position:relative;flex:none}
+.tg:after{content:"";position:absolute;right:2px;top:2px;width:13px;height:13px;border-radius:50%;background:#fff}
+.tg.off{background:#d5dfeb}.tg.off:after{right:auto;left:2px}
+.ap{margin-left:auto;font-size:9px;font-weight:700;color:#b26b00;background:#fff4dc;border-radius:5px;padding:3px 6px;flex:none}
+svg{position:absolute;inset:0}
+</style></head><body><div class=bg></div>
+<svg viewBox="0 0 800 500"><g fill=none stroke="#00c9e1" stroke-width="2" stroke-dasharray="6 5" opacity=".75"><path d="M310 250 L350 250"/><path d="M470 220 C 490 220, 490 120, 510 120"/><path d="M470 250 C 495 250, 495 230, 510 230"/><path d="M470 280 C 495 280, 495 340, 510 340"/></g></svg>
+<div class="win client"><div class=bar><i></i><i></i><i></i><span class=t>AI assistant</span></div><div class=body>
+<div class="m u">Has Northwind paid invoice #1042 yet?</div>
+<div class=call>→ books.get_invoice<br>&nbsp;&nbsp;{ id: "INV-1042" }<br>← status: "paid" ✓</div>
+<div class="m a">Yes. INV-1042 ($6,500) was paid yesterday. Want me to update the deal in the CRM?</div>
+<div class="m u">Yes please.</div>
+<div class="m a" style="border-color:#f1d18a;background:#fffaf0">⏸ Waiting for your approval to update CRM record…</div></div></div>
+<div class=hub><div style="font-size:30px;font-weight:800;letter-spacing:.04em">MCP</div><b>Server</b><small>Auth · scoped access<br>· audit log</small></div>
+<div class="win tools"><h5>CONNECTED TOOLS</h5>
+<div class=tr><div class=logo><img src="../../public/logos/books.svg"></div><div><b>Zoho Books</b><small>Read invoices</small></div><span class=tg></span></div>
+<div class=tr><div class=logo><img src="../../public/logos/crm.svg"></div><div><b>Zoho CRM</b><small>Read · update deals</small></div><span class=ap>APPROVAL</span></div>
+<div class=tr><div class=logo><img src="../../public/logos/analytics.svg"></div><div><b>Analytics</b><small>Read reports</small></div><span class=tg></span></div>
+<div class=tr><div class=logo><img src="../../public/logos/mail.svg"></div><div><b>Mail</b><small>Send email</small></div><span class="tg off"></span></div>
+<div class=tr><div class=logo><img src="../../public/logos/n8n.png"></div><div><b>Workflows</b><small>Trigger n8n flows</small></div><span class=tg></span></div>
+</div></body></html>

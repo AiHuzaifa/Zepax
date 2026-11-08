@@ -1,0 +1,14 @@
+{
+  "crm": "https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg",
+  "books": "https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg",
+  "analytics": "https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg",
+  "mail": "https://www.zohowebstatic.com/sites/zweb/images/productlogos/mail.svg",
+  "highlevel": "https://marketing.gohighlevel.com/brandkit (official Space Blue full-color PNG; downloaded from its Google Cloud asset origin)",
+  "hubspot": "https://raw.githubusercontent.com/HubSpot/hubspot-cms-vscode/master/images/hubspot-logo.svg",
+  "n8n": "https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png",
+  "make": "https://cdn.make.com/cms/documents/make-logo-kit.zip \u2014 Logo/RGB/Logo-RGB-Color.svg",
+  "zapier": "https://zapier.com \u2014 original inline SVG in header",
+  "openai": "https://cdn.openai.com/brand/OpenAI-Logos-2025.zip \u2014 black wordmark",
+  "mcp": "https://raw.githubusercontent.com/modelcontextprotocol/docs/main/logo/light.svg",
+  "claude": "https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-svg/icons/claude-color.svg \u2014 original-color Claude symbol; paired with a separate readable platform label"
+}

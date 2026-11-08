@@ -1,0 +1,510 @@
+[
+  {
+    "slug": "new-leaf-landscapes-ai-receptionist",
+    "title": "AI Voice Receptionist for New Leaf Landscapes",
+    "kicker": "Voice AI & appointment automation",
+    "category": "AI agents",
+    "summary": "A Retell voice receptionist connected to Make workflows for checking calendar availability, handling contacts and booking appointments.",
+    "cover": "/cases/new-leaf-landscapes-ai-receptionist/retell-receptionist.png",
+    "tools": [
+      "Retell AI",
+      "Make",
+      "Calendar & contact APIs"
+    ],
+    "highlights": [
+      "Conversational call handling",
+      "Calendar availability checks",
+      "Contact-aware appointment booking"
+    ],
+    "role": "Voice AI & Automation Implementation",
+    "clientWebsite": "https://newleaflandscapesinc.com/",
+    "clientName": "New Leaf Landscapes, Inc.",
+    "overview": [
+      "Built an AI voice receptionist named Sarah for New Leaf Landscapes, Inc. The solution connects Retell’s conversation layer with Make scenarios that check calendar availability and create appointments.",
+      "The agent configuration includes functions for availability checks, appointment booking, SMS, owner notifications, lead information and call transfer. The supplied screenshots document the agent setup and the two core scheduling workflows."
+    ],
+    "challenge": [
+      "A landscaping enquiry often needs to move from a phone conversation to an appointment. The system was designed to connect those steps, check available times and handle contact records within the booking process."
+    ],
+    "objectives": [
+      "Provide a warm, concise phone experience tailored to the business.",
+      "Check calendar availability through a dedicated Make scenario.",
+      "Look up existing contacts before creating a new record.",
+      "Create an appointment through the appropriate booking path.",
+      "Give the agent access to notification and human-transfer functions."
+    ],
+    "steps": [
+      {
+        "title": "A business-specific voice receptionist",
+        "text": [
+          "Configured Sarah in Retell with a natural conversational tone and instructions for short, clear responses. The agent uses the America/Los_Angeles timezone and exposes dedicated tools for scheduling, lead information, notifications and call transfer."
+        ]
+      },
+      {
+        "title": "Calendar availability through Make",
+        "text": [
+          "The S1 Check Availability scenario receives a webhook, prepares variables, sends an HTTP GET request to the calendar availability endpoint and returns a webhook response to the agent."
+        ]
+      },
+      {
+        "title": "Contact lookup and appointment creation",
+        "text": [
+          "The S2 Booking_Appointment + sms scenario begins with a contact-search request. A router separates new contacts from existing contacts: the new-contact branch creates the record, while the existing-contact branch proceeds with the matching contact. Both paths prepare booking values, create a calendar appointment and return a response."
+        ]
+      },
+      {
+        "title": "Supporting communication functions",
+        "text": [
+          "The Retell configuration includes SMS, sms_owner, send_lead_info and transfer_call functions alongside booking tools. These provide connection points for customer communication, owner handoff and lead capture; their individual downstream workflows are not shown in the supplied screenshots."
+        ]
+      }
+    ],
+    "stack": [
+      "Retell AI — voice conversation, agent instructions and callable functions",
+      "Make — webhook-based availability and booking scenarios",
+      "Calendar & contact APIs — contact lookup, contact creation, availability queries and appointment creation"
+    ],
+    "results": [
+      "A business-specific voice agent connected to scheduling workflows.",
+      "A dedicated availability lookup before the booking step.",
+      "Separate handling for new and existing contacts.",
+      "Appointment creation and webhook responses on both booking paths."
+    ],
+    "note": "This case study describes the configuration and workflows shown in the project screenshots. Call volumes, booking conversion rates and measured time savings were not supplied.",
+    "contribution": [
+      "Implemented the Retell receptionist configuration and the Make scheduling integrations, connecting conversation tools with calendar availability, contact handling and appointment creation."
+    ],
+    "screenshots": [
+      {
+        "src": "/cases/new-leaf-landscapes-ai-receptionist/retell-receptionist.png",
+        "caption": "Sarah’s Retell agent configuration, with availability, booking, SMS, lead-information and call-transfer functions."
+      },
+      {
+        "src": "/cases/new-leaf-landscapes-ai-receptionist/make-availability.png",
+        "caption": "Make availability scenario: incoming webhook, variables, calendar HTTP request and webhook response."
+      },
+      {
+        "src": "/cases/new-leaf-landscapes-ai-receptionist/make-booking.png",
+        "caption": "Make booking scenario with contact lookup, separate new and existing contact paths, and appointment creation."
+      }
+    ]
+  },
+  {
+    "slug": "meta-ads-zoho-crm-cpl-automation",
+    "title": "Meta Ads Attribution & CPL Automation in Zoho CRM",
+    "kicker": "CRM & marketing automation",
+    "category": "CRM",
+    "summary": "Connect campaign attribution, qualified-lead conversion events and cost-per-lead reporting inside Zoho CRM.",
+    "cover": "/cases/meta-ads-zoho-crm-cpl-automation/image1.png",
+    "tools": [
+      "Zoho CRM",
+      "Deluge",
+      "Meta Ads",
+      "Meta Conversions API"
+    ],
+    "highlights": [
+      "Campaign attribution",
+      "Qualified-lead signals",
+      "CPL visibility"
+    ],
+    "role": "Zoho CRM Developer & Integration Specialist",
+    "overview": [
+      "This project connected Meta Ads data with Zoho CRM to improve lead attribution, qualified-lead conversion reporting, and campaign cost visibility. The integration captured key Meta identifiers in CRM, sent qualified-lead events back to Meta, and calculated Cost Per Lead (CPL) using ad-spend data through a custom Deluge function."
+    ],
+    "challenge": [
+      "The business needed clearer visibility into which Meta ads and campaigns were generating leads, and how much each lead was costing. Without a connected workflow, campaign identifiers and CPL could require manual tracking or calculation, making it harder to review campaign performance from within the CRM."
+    ],
+    "objectives": [
+      "Capture Meta lead and campaign attribution details in Zoho CRM.",
+      "Store Lead ID, Ad ID, and Campaign ID against the relevant CRM lead record.",
+      "Send a conversion event to Meta when a lead reaches the qualified stage.",
+      "Retrieve ad-spend data and calculate CPL using a custom Deluge function.",
+      "Make CPL available on each corresponding CRM lead record for easier performance analysis."
+    ],
+    "steps": [
+      {
+        "title": "Meta Ads Data Capture",
+        "text": [
+          "Configured the integration to capture visitor/lead details from Meta Ads and associate the relevant Meta identifiers with the corresponding Zoho CRM lead. The captured identifiers included Lead ID, Ad ID, and Campaign ID, helping preserve campaign attribution within the CRM record."
+        ]
+      },
+      {
+        "title": "Qualified Lead Conversion Event",
+        "text": [
+          "Implemented a workflow to push a conversion event to Meta when a lead becomes qualified. This helps Meta receive downstream lead-quality signals rather than relying only on the initial lead submission."
+        ]
+      },
+      {
+        "title": "CPL Calculation with Deluge and Meta API",
+        "text": [
+          "Developed a custom Deluge function that uses Meta API ad-spend data to calculate Cost Per Lead (CPL) and stores the calculated value in the corresponding Zoho CRM lead record. This made CPL available alongside lead information and reduced the need for manual calculations."
+        ]
+      }
+    ],
+    "stack": [
+      "Zoho CRM — lead records, fields, and workflow automation",
+      "Deluge — custom function and integration logic",
+      "Meta Ads / Meta API — campaign identifiers, ad-spend data, and conversion event delivery",
+      "Meta Conversions API — qualified-lead event push (as implemented in the project)"
+    ],
+    "results": [
+      "Improved visibility of Meta lead attribution within Zoho CRM.",
+      "Enabled qualified-lead events to be sent back to Meta.",
+      "Made CPL available on individual lead records using ad-spend data.",
+      "Reduced reliance on manual CPL calculation and improved campaign performance visibility."
+    ],
+    "note": "Note: Quantified performance improvements were not provided, so this case study describes the implemented capabilities without claiming specific percentage gains or financial results.",
+    "contribution": [
+      "As the Zoho CRM Developer & Integration Specialist, I worked on the Meta Ads-to-CRM integration, attribution data capture, qualified-lead conversion event logic, and the custom Deluge function for CPL calculation."
+    ],
+    "screenshots": [
+      {
+        "src": "/cases/meta-ads-zoho-crm-cpl-automation/image1.png",
+        "caption": "Meta attribution fields and CPL on a Zoho CRM lead record."
+      },
+      {
+        "src": "/cases/meta-ads-zoho-crm-cpl-automation/image2.png",
+        "caption": "Custom Deluge logic for calculating CPL and updating the CRM record."
+      },
+      {
+        "src": "/cases/meta-ads-zoho-crm-cpl-automation/image3.png",
+        "caption": "Lead-created workflow triggering the Meta Ads CPL function."
+      }
+    ]
+  },
+  {
+    "slug": "zoho-books-saudi-e-invoicing",
+    "title": "Zoho Books Implementation & Saudi E-Invoicing Integration",
+    "kicker": "Accounting & business automation",
+    "category": "Automation",
+    "summary": "A connected accounting foundation with VAT configuration, invoice automation and Fatoora/ZATCA e-invoicing integration.",
+    "cover": "/cases/zoho-books-saudi-e-invoicing/image3.png",
+    "tools": [
+      "Zoho Books",
+      "Fatoora / ZATCA",
+      "VAT configuration",
+      "Invoice automation"
+    ],
+    "highlights": [
+      "Accounting foundation",
+      "E-invoicing integration",
+      "Financial reporting"
+    ],
+    "role": "Zoho Books Implementation Specialist",
+    "overview": [
+      "Implemented Zoho Books for a company operating in Saudi Arabia, configuring its core accounting environment and invoicing workflows while addressing local VAT and e-invoicing requirements. The work included Chart of Accounts setup, invoice automation, payment reminders, branded templates, Fatoora/ZATCA e-invoicing integration, and financial reporting."
+    ],
+    "challenge": [
+      "The company needed a structured accounting system that could support day-to-day invoicing and financial visibility while aligning with Saudi Arabia's VAT and e-invoicing requirements. The system also needed a professional customer-facing invoice experience and reminders to reduce manual follow-up."
+    ],
+    "objectives": [
+      "Configure Zoho Books to support the company's accounting processes.",
+      "Set up an appropriate Chart of Accounts and VAT configuration.",
+      "Automate invoicing and invoice/payment reminders where required.",
+      "Integrate e-invoicing processes with Fatoora/ZATCA requirements.",
+      "Create branded invoice templates and useful financial reports.",
+      "Improve access to timely financial information through reporting."
+    ],
+    "steps": [
+      {
+        "title": "Zoho Books Configuration",
+        "text": [
+          "Configured the Zoho Books organization and its foundational accounting settings. Set up the Chart of Accounts to organize financial transactions and support consistent bookkeeping and reporting."
+        ]
+      },
+      {
+        "title": "VAT and E-Invoicing Integration",
+        "text": [
+          "Configured VAT settings and implemented the e-invoicing integration with Fatoora/ZATCA as part of the Saudi compliance workflow. The setup was intended to support compliant invoice processing within the company's accounting operations."
+        ]
+      },
+      {
+        "title": "Invoice Automation and Reminders",
+        "text": [
+          "Configured automated invoicing processes and reminders to reduce repetitive manual work and support timely customer follow-up. This helped standardize the invoicing workflow within Zoho Books."
+        ]
+      },
+      {
+        "title": "Branded Templates and Financial Reporting",
+        "text": [
+          "Customized invoice templates to reflect the company's branding and created financial reports to improve visibility into accounting activity. These reports provided a more accessible view of financial information for day-to-day monitoring and review."
+        ]
+      }
+    ],
+    "stack": [
+      "Zoho Books — accounting configuration, invoicing, reminders, and reporting",
+      "Fatoora / ZATCA — Saudi Arabia e-invoicing compliance workflow",
+      "VAT — tax configuration for the company's invoicing process",
+      "Zoho Books templates and automation — branded documents and recurring operational tasks"
+    ],
+    "results": [
+      "Established a centralized Zoho Books environment for accounting and invoicing.",
+      "Improved consistency through configured invoice automation and reminders.",
+      "Supported the company's Saudi VAT and e-invoicing workflow through Fatoora/ZATCA integration.",
+      "Provided branded invoices for a more professional customer experience.",
+      "Improved financial visibility through tailored reports."
+    ],
+    "note": "Compliance note: This case study reflects the implementation details provided. Formal compliance status depends on the company's specific ZATCA onboarding, invoice types, configuration, and successful validation; no certification or quantified performance result is claimed here.",
+    "contribution": [
+      "As the Zoho Books Implementation Specialist, I configured the accounting foundation, VAT settings, invoicing automation, reminders, branded templates, Fatoora/ZATCA e-invoicing integration, and financial reports."
+    ],
+    "screenshots": [
+      {
+        "src": "/cases/zoho-books-saudi-e-invoicing/image1.png",
+        "caption": "VAT settings configured in Zoho Books."
+      },
+      {
+        "src": "/cases/zoho-books-saudi-e-invoicing/image2.png",
+        "caption": "Customized customer-facing invoice with a QR code."
+      },
+      {
+        "src": "/cases/zoho-books-saudi-e-invoicing/image3.png",
+        "caption": "Zoho Books accounting dashboard and financial overview."
+      },
+      {
+        "src": "/cases/zoho-books-saudi-e-invoicing/image4.png",
+        "caption": "Tax reports and the VAT Audit Report in the Report Center."
+      },
+      {
+        "src": "/cases/zoho-books-saudi-e-invoicing/image5.png",
+        "caption": "E-invoicing enabled and the organization connected to Fatoora."
+      },
+      {
+        "src": "/cases/zoho-books-saudi-e-invoicing/image6.png",
+        "caption": "Chart of Accounts configured for the organization."
+      }
+    ]
+  },
+  {
+    "slug": "zoho-membership-billing-automation",
+    "title": "Membership Billing Automation with Zoho CRM & Zoho Books",
+    "kicker": "Membership & billing automation",
+    "category": "Automation",
+    "summary": "From membership selection to recurring invoices: connected billing across Zoho CRM and Zoho Books.",
+    "tools": [
+      "Zoho CRM",
+      "Zoho Books",
+      "CRM–Books integration"
+    ],
+    "highlights": [
+      "Status-based membership workflows",
+      "Invoices and payment links",
+      "Synchronized billing records"
+    ],
+    "overview": [
+      "This project automated membership billing across Zoho CRM and Zoho Books. Selecting a membership triggered an invoice with a payment link. Once the membership became active, CRM workflows initiated recurring invoices and synchronized invoice information with Zoho Books."
+    ],
+    "challenge": [
+      "Manual membership billing involves creating invoices, sharing payment links, tracking activation and maintaining records across CRM and accounting. The project connected these steps into a consistent process."
+    ],
+    "objectives": [
+      "Generate an invoice when a membership is selected.",
+      "Include a payment link with the invoice.",
+      "Start recurring billing after membership activation.",
+      "Keep invoice information aligned across both platforms."
+    ],
+    "steps": [
+      {
+        "title": "Membership selection and initial invoicing",
+        "text": [
+          "Configured CRM automation to respond to membership selection and generate the corresponding Zoho Books invoice with a payment link."
+        ]
+      },
+      {
+        "title": "Activation-based recurring billing",
+        "text": [
+          "Used membership status to trigger recurring invoice generation after activation, rather than starting recurring billing at selection alone."
+        ]
+      },
+      {
+        "title": "Connected invoice records",
+        "text": [
+          "Synchronized recurring invoice information between Zoho CRM and Zoho Books to keep the billing workflow connected."
+        ]
+      }
+    ],
+    "results": [
+      "Automated initial invoice creation and payment-link inclusion.",
+      "Recurring invoices tied to active membership status.",
+      "Connected CRM and accounting records with fewer repetitive billing tasks."
+    ],
+    "screenshots": [
+      {
+        "src": "/cases/zoho-membership-billing-automation/membership-rId7.png",
+        "caption": "Membership Activated workflow with the recurring-invoice function."
+      },
+      {
+        "src": "/cases/zoho-membership-billing-automation/membership-rId8.png",
+        "caption": "Invoice Sent stage workflow and invoice-generation function."
+      }
+    ],
+    "cover": "/cases/zoho-membership-billing-automation/membership-rId7.png",
+    "note": "The project documents the implemented billing capabilities; no quantified collection or time-saving results are claimed.",
+    "role": "Zoho Developer",
+    "stack": [
+      "Zoho CRM — Status-based membership workflows",
+      "Zoho Books — Invoices and payment links",
+      "CRM–Books integration — Synchronized billing records"
+    ],
+    "contribution": [
+      "This project automated membership billing across Zoho CRM and Zoho Books. Selecting a membership triggered an invoice with a payment link. Once the membership became active, CRM workflows initiated recurring invoices and synchronized invoice information with Zoho Books."
+    ]
+  },
+  {
+    "slug": "automotive-ghl-crm-sales-automation",
+    "title": "Automotive Sales & Membership Automation in GoHighLevel",
+    "kicker": "Automotive CRM & sales automation",
+    "category": "CRM",
+    "summary": "A connected sales funnel, checkout and CRM workflow for an automotive business, supported by automated customer follow-up.",
+    "tools": [
+      "GoHighLevel",
+      "Sales funnels & checkout",
+      "Workflow automation"
+    ],
+    "highlights": [
+      "Customer records and sales pipelines",
+      "Membership-focused customer journey",
+      "Email sequences and internal notifications"
+    ],
+    "overview": [
+      "Designed and implemented a connected sales funnel, checkout, CRM and automated lead-management system for an automotive company. The scope included email sequences, lead tagging, pipeline stages and instant follow-ups."
+    ],
+    "challenge": [
+      "Lead enquiries, purchases and customer updates needed to flow through a consistent process. Connecting the customer-facing funnel with CRM workflows made these handoffs easier to manage."
+    ],
+    "objectives": [
+      "Connect lead capture and purchases with CRM records.",
+      "Organize opportunities using tags and pipeline stages.",
+      "Automate personalized emails and internal notifications.",
+      "Support membership-related customer follow-up."
+    ],
+    "steps": [
+      {
+        "title": "Sales funnel and checkout",
+        "text": [
+          "Built the customer-facing sales funnel and checkout as the entry point to the connected sales process. The supplied screenshot shows an automotive membership offering."
+        ]
+      },
+      {
+        "title": "CRM and pipeline configuration",
+        "text": [
+          "Configured lead tagging, record updates and sales-stage progression to organize customer activity inside GoHighLevel."
+        ]
+      },
+      {
+        "title": "Membership and follow-up workflows",
+        "text": [
+          "Implemented automated email sequences, instant follow-ups and internal notifications. The portfolio screenshots show a membership payment workflow and related subscription, booking and warranty workflows."
+        ]
+      }
+    ],
+    "results": [
+      "Connected lead capture, purchases and CRM record updates.",
+      "Automated follow-up and sales-stage progression.",
+      "A structured workflow library for membership and customer communications."
+    ],
+    "screenshots": [
+      {
+        "src": "/cases/automotive-ghl-crm-sales-automation/ghl-rId6.png",
+        "caption": "Automotive membership sales funnel and customer-facing offer."
+      },
+      {
+        "src": "/cases/automotive-ghl-crm-sales-automation/ghl-rId7.png",
+        "caption": "Membership payment automation inside the GoHighLevel workflow builder."
+      },
+      {
+        "src": "/cases/automotive-ghl-crm-sales-automation/ghl-rId8.png",
+        "caption": "Workflow library covering membership, booking and warranty follow-up."
+      }
+    ],
+    "cover": "/cases/automotive-ghl-crm-sales-automation/ghl-rId6.png",
+    "note": "The portfolio describes reduced manual work and improved follow-up; no measured conversion or revenue uplift is claimed.",
+    "role": "GoHighLevel CRM & Automation Specialist",
+    "stack": [
+      "GoHighLevel — Customer records and sales pipelines",
+      "Sales funnels & checkout — Membership-focused customer journey",
+      "Workflow automation — Email sequences and internal notifications"
+    ],
+    "contribution": [
+      "Designed and implemented a connected sales funnel, checkout, CRM and automated lead-management system for an automotive company. The scope included email sequences, lead tagging, pipeline stages and instant follow-ups."
+    ]
+  },
+  {
+    "slug": "google-lsa-ghl-ai-chatbot",
+    "title": "Google LSA Lead Response Automation with GoHighLevel & Make",
+    "kicker": "AI chatbot & lead automation",
+    "category": "AI agents",
+    "summary": "A workflow-connected chatbot setup for Google Local Services Ads leads, combining GoHighLevel workflows with Make AI agents.",
+    "tools": [
+      "GoHighLevel",
+      "Make",
+      "Webhooks & HTTP"
+    ],
+    "highlights": [
+      "Lead-response workflows",
+      "Routing, data storage and AI agent steps",
+      "Connections between workflow systems"
+    ],
+    "overview": [
+      "The portfolio presents a GoHighLevel chatbot automation for Google Local Services Ads leads. Two GoHighLevel workflows and a Make scenario show how lead-response logic is organized across the CRM and automation platform."
+    ],
+    "challenge": [
+      "Incoming advertising enquiries need a consistent response process and connected conversation handling. This implementation brings CRM workflow logic and AI-assisted processing into a coordinated lead-response setup."
+    ],
+    "objectives": [
+      "Structure response handling for Google LSA enquiries.",
+      "Connect GoHighLevel workflows with external automation.",
+      "Route incoming data through AI agent and data-store steps."
+    ],
+    "steps": [
+      {
+        "title": "GoHighLevel workflow logic",
+        "text": [
+          "The LSA1 and LSA2 screenshots show trigger-based workflows with conditional branches and response-handling steps. These workflows provide the CRM-side structure for the chatbot process."
+        ]
+      },
+      {
+        "title": "Make scenario orchestration",
+        "text": [
+          "The supplied scenario shows a webhook entry point, data-store operations, tools and a router. The router branches into Make AI Agent steps, supporting different processing paths."
+        ]
+      },
+      {
+        "title": "Connected response processing",
+        "text": [
+          "HTTP modules appear after the AI agent paths, alongside a data-store step on one branch. Together these components support an exchange of data between the chatbot automation and connected systems."
+        ]
+      }
+    ],
+    "results": [
+      "A documented pair of GoHighLevel workflows for LSA lead handling.",
+      "An AI-connected Make scenario with routing and data-store operations.",
+      "A foundation for coordinated lead-response processing across CRM and automation tools."
+    ],
+    "screenshots": [
+      {
+        "src": "/cases/google-lsa-ghl-ai-chatbot/ghl-rId11.png",
+        "caption": "Make scenario with webhook, data store, router, AI agents and HTTP modules."
+      },
+      {
+        "src": "/cases/google-lsa-ghl-ai-chatbot/ghl-rId9.png",
+        "caption": "LSA1 workflow in GoHighLevel with conditional response logic."
+      },
+      {
+        "src": "/cases/google-lsa-ghl-ai-chatbot/ghl-rId10.png",
+        "caption": "LSA2 workflow showing branched lead-response handling."
+      }
+    ],
+    "cover": "/cases/google-lsa-ghl-ai-chatbot/ghl-rId11.png",
+    "note": "This description is based on the project title and supplied workflow screenshots. Exact message content, channel configuration and measured response or booking results were not provided.",
+    "role": "GoHighLevel & Make Automation Specialist",
+    "stack": [
+      "GoHighLevel — Lead-response workflows",
+      "Make — Routing, data storage and AI agent steps",
+      "Webhooks & HTTP — Connections between workflow systems"
+    ],
+    "contribution": [
+      "The portfolio presents a GoHighLevel chatbot automation for Google Local Services Ads leads. Two GoHighLevel workflows and a Make scenario show how lead-response logic is organized across the CRM and automation platform."
+    ]
+  }
+]

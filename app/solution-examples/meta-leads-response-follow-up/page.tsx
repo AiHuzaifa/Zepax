@@ -1,0 +1,3 @@
+import Site from "../../site";
+export const metadata={title:"Meta Leads Response Follow Up: Illustrative Workflow | ZEPAX",description:"An illustrative automation concept with transparent business impact assumptions. Not a completed client project.",alternates:{canonical:"/solution-examples/meta-leads-response-follow-up"}};
+export default function Page(){return <Site page="/solution-examples/meta-leads-response-follow-up"/>}

@@ -1,0 +1,3 @@
+import Site from "../../site";
+export const metadata={title:"Invoice Reconciliation Workflow: Illustrative Workflow | ZEPAX",description:"An illustrative automation concept with transparent business impact assumptions. Not a completed client project.",alternates:{canonical:"/solution-examples/invoice-reconciliation-workflow"}};
+export default function Page(){return <Site page="/solution-examples/invoice-reconciliation-workflow"/>}
